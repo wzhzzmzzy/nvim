@@ -1,3 +1,7 @@
+if vim.bo.filetype == "markdown" or vim.bo.filetype == "help" then
+  return
+end
+
 return {
   "hrsh7th/nvim-cmp",
   ---@param opts cmp.ConfigSchema

@@ -5,3 +5,5 @@
 if vim.g.neovide then
   require("config.gui")
 end
+
+vim.opt.swapfile = false
