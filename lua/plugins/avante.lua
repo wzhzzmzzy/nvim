@@ -6,16 +6,51 @@ return {
       "stevearc/dressing.nvim",
     },
     opts = {
-      debug = true,
+      debug = false,
       hints = { enabled = false },
-      provider = "deepseek",
-      auto_suggestions_provider = "deepseek",
+      -- provider = "sf-deepseek",
+      provider = "sf-deepseek",
+      auto_suggestions_provider = "sf-fim",
+      behaviour = {
+        auto_suggestions = false,
+      },
+      windows = {
+        width = 40,
+      },
       vendors = {
-        ["deepseek"] = {
+        deepseek = {
           __inherited_from = "openai",
           endpoint = "https://api.deepseek.com/v1",
-          model = "deepseek-chat",
+          model = "deepseek-reasoner",
           api_key_name = "DEEPSEEK_API_KEY",
+        },
+        ["sf-deepseek"] = {
+          __inherited_from = "openai",
+          endpoint = "https://api.siliconflow.cn/v1",
+          model = "deepseek-ai/DeepSeek-V3",
+          api_key_name = "SILICON_FLOW_API_KEY",
+          disable_tools = true,
+        },
+        ["sf-fim"] = {
+          __inherited_from = "openai",
+          endpoint = "https://api.siliconflow.cn/v1",
+          -- model = "Qwen/Qwen2.5-32B-Instruct",
+          model = "Qwen/Qwen2.5-Coder-32B-Instruct",
+          api_key_name = "SILICON_FLOW_FIM_API_KEY",
+          disable_tools = true,
+        },
+        ["friday"] = {
+          __inherited_from = "openai",
+          endpoint = "https://aigc.sankuai.com/v1/openai/native",
+          model = "deepseek-v3-friday",
+          api_key_name = "FRIDAY_API_KEY",
+          disable_tools = true,
+        },
+        ["friday-fim"] = {
+          __inherited_from = "openai",
+          endpoint = "https://aigc.sankuai.com/v1/openai/native",
+          model = "Doubao-1.5-pro-32k",
+          api_key_name = "FRIDAY_API_KEY",
         },
       },
     },
