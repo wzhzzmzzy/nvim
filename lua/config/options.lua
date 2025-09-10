@@ -5,6 +5,3 @@
 if vim.g.neovide then
   require("config.gui")
 end
-
-vim.opt.swapfile = false
-vim.g.lazyvim_eslint_auto_format = true

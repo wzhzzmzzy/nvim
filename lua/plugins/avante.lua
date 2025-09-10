@@ -9,7 +9,7 @@ return {
       debug = false,
       hints = { enabled = false },
       -- provider = "sf-deepseek",
-      provider = "sf-deepseek",
+      provider = "deepseek",
       auto_suggestions_provider = "sf-fim",
       behaviour = {
         auto_suggestions = false,
@@ -17,11 +17,11 @@ return {
       windows = {
         width = 40,
       },
-      vendors = {
+      providers = {
         deepseek = {
           __inherited_from = "openai",
           endpoint = "https://api.deepseek.com/v1",
-          model = "deepseek-reasoner",
+          model = "deepseek-chat",
           api_key_name = "DEEPSEEK_API_KEY",
         },
         ["sf-deepseek"] = {
